@@ -4,15 +4,16 @@ import {
   useColorScheme,
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { DrawerHeader } from './src/Components';
 import Login from './src/Pages/Login';
 import Register from './src/Pages/Register';
 import { constants } from './src/config';
 
 const { routes } = constants;
 
-const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -25,18 +26,28 @@ const App = () => {
   return (
     <SafeAreaView style={backgroundStyle}>
         <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen
+          <Drawer.Navigator>
+            <Drawer.Screen
               name={routes.login}
               component={Login}
               options={{ headerShown: false }}
             />
-            <Stack.Screen
+            <Drawer.Screen
               name={routes.register}
               component={Register}
-              options={{ headerShown: false }}
+              options={{
+                header: ({ navigation, route, options }) => {
+                  return (
+                    <DrawerHeader
+                      navigation={navigation}
+                      route={route}
+                      options={options}
+                    />
+                  )
+                }
+              }}
             />
-          </Stack.Navigator>
+          </Drawer.Navigator>
         </NavigationContainer>
     </SafeAreaView>
   );

@@ -4,6 +4,24 @@ import { theme } from '../../config';
 const { colors } = theme;
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: colors.white,
+  },
+  headerWrap: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderBottomColor: '#ddd',
+    borderBottomWidth: 1,
+  },
+  header: {
+    color: colors.text,
+    fontWeight: '700',
+    fontSize: 25,
+  },
   wrap: {
     flex: 1,
     backgroundColor: colors.white,
