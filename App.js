@@ -19,15 +19,23 @@ const App = () => {
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-    flex: 1
+    flex: 1,
   };
 
   return (
     <SafeAreaView style={backgroundStyle}>
         <NavigationContainer>
           <Stack.Navigator>
-            <Stack.Screen name={routes.login} component={Login} />
-            <Stack.Screen name={routes.register} component={Register} />
+            <Stack.Screen
+              name={routes.login}
+              component={Login}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name={routes.register}
+              component={Register}
+              options={{ headerShown: false }}
+            />
           </Stack.Navigator>
         </NavigationContainer>
     </SafeAreaView>
