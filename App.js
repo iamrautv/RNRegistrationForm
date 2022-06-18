@@ -5,6 +5,7 @@ import {
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import 'react-native-gesture-handler'
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { DrawerHeader } from './src/Components';
 import Login from './src/Pages/Login';
