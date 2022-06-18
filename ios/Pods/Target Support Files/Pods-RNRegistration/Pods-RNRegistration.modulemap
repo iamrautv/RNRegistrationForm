@@ -1,0 +1,6 @@
+module Pods_RNRegistration {
+  umbrella header "Pods-RNRegistration-umbrella.h"
+
+  export *
+  module * { export * }
+}
